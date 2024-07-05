@@ -5,7 +5,7 @@ pragma solidity >=0.8.0;
 /// @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/tokens/ERC20.sol)
 /// @author Modified from Uniswap (https://github.com/Uniswap/uniswap-v2-core/blob/master/contracts/UniswapV2ERC20.sol)
 /// @dev Do not manually set balances without updating totalSupply, as the sum of all user balances must not exceed it.
-abstract contract ERC20 {
+abstract contract ERC20Clone {
     /*//////////////////////////////////////////////////////////////
                                  EVENTS
     //////////////////////////////////////////////////////////////*/
@@ -57,8 +57,8 @@ abstract contract ERC20 {
         symbol = _symbol;
         decimals = _decimals;
 
-        INITIAL_CHAIN_ID = block.chainid;
-        INITIAL_DOMAIN_SEPARATOR = computeDomainSeparator();
+        // INITIAL_CHAIN_ID = block.chainid;
+        // INITIAL_DOMAIN_SEPARATOR = computeDomainSeparator();
     }
 
     /*//////////////////////////////////////////////////////////////
@@ -203,4 +203,6 @@ abstract contract ERC20 {
 
         emit Transfer(from, address(0), amount);
     }
+
+    
 }
